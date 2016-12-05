@@ -1,0 +1,50 @@
+ .page-tit {
+    color: #000;
+  }
+  .page-cont {
+    padding: 20px;
+    background-color: #fff;
+  }
+  .btn-upload{
+    margin: 5px auto 0 auto;
+  }
+  .row {
+//    margin: 15px 0 0 0;
+  }
+  .row.mt0 {
+    margin: 0 0 0 0;
+  }
+  .row.mt10 {
+    margin: 10px 0 0 0;
+  }
+
+  .row-tit{
+    padding: 10px 20px;
+    background-color: #F0F3F6;
+    border-bottom: 1px solid #e4e8eb;
+  }
+  .row-cont {
+    padding: 20px 20px;
+
+    .row{
+      margin-top: 10px;
+    }
+  }
+
+  .row-box {
+    border: 1px solid #e4e8eb ;
+    margin-bottom: 20px;
+  }
+  .row-box-tit {
+    height: 32px;
+    line-height: 32px;
+    vertical-align: top;
+  }
+  .row-box-cont {
+    padding: 10px 0 0 0;
+  }
+
+  .inline-block{
+    display: inline-block;
+    width: auto;
+  }

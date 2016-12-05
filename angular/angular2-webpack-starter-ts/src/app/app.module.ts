@@ -18,6 +18,9 @@ import { HomeComponent } from './home';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLarge } from './home/x-large';
+import { Navigation } from './navigation';
+import { userManage } from './userManage';
+import { userDetail } from './userManage/userDetail';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -41,6 +44,9 @@ type StoreType = {
     AboutComponent,
     HomeComponent,
     NoContentComponent,
+    Navigation,
+    userManage,
+    userDetail,
     XLarge
   ],
   imports: [ // import Angular's modules

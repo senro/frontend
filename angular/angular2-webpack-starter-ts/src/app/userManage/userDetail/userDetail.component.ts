@@ -1,33 +1,45 @@
 import { Component } from '@angular/core';
 
-import { AppState } from '../app.service';
-import { Navs } from './navigation.service';
+import { AppState } from '../../app.service';
+import { service } from './userDetail.service';
 
 
 @Component({
   // The selector is what angular internally uses
   // for `document.querySelectorAll(selector)` in our index.html
   // where, in this case, selector is the string 'home'
-  selector: 'Navigation',  // <home></home>
+  selector: 'userDetail',  // <home></home>
   // We need to tell Angular's Dependency Injection which providers are in our app.
   providers: [
-      Navs
+      service
   ],
   // Our list of styles in our component. We may add more to compose many styles together
-  styleUrls: [ './navigation.component.less' ],
+  styleUrls: [ './userDetail.component.css' ],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
-  templateUrl: './navigation.component.html'
+  templateUrl: './userDetail.component.html'
 })
-export class Navigation {
+export class userDetail {
   // Set our default values
   test="test";
   localState = { value: '' };
-  navs= [];
+  model = {
+        ui:{
+          editType:'新增'
+        },
+        data:{
+            id:'',
+            account:'',
+            username: '',
+            password: '',
+            rePassword:'',
+            status: true
+        }
+  };
 
   // TypeScript public modifiers
-  constructor(public appState: AppState, public Navs: Navs) {
-      console.log(Navs.getData());
-      this.navs=Navs.getData().value;
+  constructor(public appState: AppState, public service: service) {
+      console.log(service.getData());
+      this.model.data=service.getData().data;
   }
 
   ngOnInit() {

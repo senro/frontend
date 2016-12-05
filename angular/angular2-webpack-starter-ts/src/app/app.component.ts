@@ -4,7 +4,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 import { AppState } from './app.service';
-import { Navigation } from './navigation';
 /*
  * App Component
  * Top Level Component
@@ -22,26 +21,14 @@ import { Navigation } from './navigation';
   template: `
     <Navigation></Navigation>
     <main>
-
+        <router-outlet></router-outlet>
     </main>
-
-    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
-
-    <footer>
-      <span>WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
-      <div>
-        <a [href]="url">
-          <img [src]="angularclassLogo" width="25%">
-        </a>
-      </div>
-    </footer>
+    <footer>copyRight @ senro 2016</footer>
   `
 })
 /*todo 模板语法过于复杂，各种符号，各种规则，各种语法，感觉完全没必要搞这么复杂，为了一个逻辑渲染感觉引入太多东西*/
 export class AppComponent {
-  angularclassLogo = 'assets/img/angularclass-avatar.png';
-  name = 'Angular 2 Webpack Starter';
-  url = 'https://twitter.com/AngularClass';
+ 
 
   constructor(
     public appState: AppState) {
