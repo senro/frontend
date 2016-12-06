@@ -1,8 +1,14 @@
-<nav>
-      <span *ngfor="let nav of Navs">
-        <a [routerLink]=" [nav.link] ">
-            {{nav.name}}
+<div class="nav">
+    <div class="nav-header col-md-2">
+        滑动验证管理平台
+    </div>
+    <div class="nav-group col-md-6" >
+        <a class="nav-btn" *ngFor="let nav of navs" [routerLink]=" [nav.href] ">
+        	<i class="iconfont {{ nav.iconClass }}"></i>
+            {{ nav.text }}
         </a>
-      </span>
-</nav>
-<router-outlet></router-outlet>
+    </div>
+    <header class="header col-md-4">
+
+    </header>
+</div>

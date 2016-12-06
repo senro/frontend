@@ -87,7 +87,7 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#module
      */
     module: {
-
+    
       rules: [
 
         /*
@@ -123,6 +123,11 @@ module.exports = function (options) {
          * Returns file content as string
          *
          */
+        {
+            test: /\.less$/,
+            use: ['to-string-loader',"css-loader","less-loader"]
+        },
+
         {
           test: /\.css$/,
           use: ['to-string-loader', 'css-loader']

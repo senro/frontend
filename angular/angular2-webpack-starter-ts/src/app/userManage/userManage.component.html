@@ -1,0 +1,83 @@
+<div class="page page-userManage">
+    <div class="page-tit">
+        <form role="form" class="page-tit-form" id="searchForm">
+            用户管理
+            <input type="hidden" name="page" value="0">
+            <input type="hidden" name="size" value="20">
+            <input type="hidden" name="order" value="desc">
+            <a href="#/userManage/userDetail" class="btn btn-primary pull-right" id="addUser">
+                <span class="glyphicon glyphicon-plus"></span>
+                创建新用户
+            </a>
+        </form>
+    </div>
+    <div class="page-cont">
+        <table id="listTable" class="merchant-manage default-list box table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>账号</th>
+                <th>姓名</th>
+                <th>状态</th>
+                <th>
+                    修改日期
+                    <a class="btn-list-sort" href="javascript:;" title="排序">
+                        <span class="glyphicon glyphicon-sort"></span>
+                    </a>
+                </th>
+                <th>操作</th>
+            </tr>
+            <tbody>
+                 <tr *ngFor="let item of data.content; let i=index" [ngClass]="{trBg:index % 2==0}">
+                    <td>
+                        <a href="#" class="btn-checkout" data-username="{{ item.username }}">
+	                        <span title="{{ item.account }}">
+	                            {{ item.account }}
+	                        </span>
+                        </a>
+                    </td>
+                    <td>
+                    <span title="{{ item.username }}">
+                            {{ item.username }}
+                    </span>
+                    </td>
+                    <td>
+                        <span *ngIf="item.status" class="glyphicon glyphicon-ok-circle" title="已启用"></span>
+                        <span *ngIf="!item.status" class="glyphicon glyphicon-ban-circle" title="已禁用"></span>
+                    </td>
+                    <td>
+                    <span title="{{ item.editTime }}">
+                        {{ item.editTime }}
+                    </span>
+                    </td>
+                    <td>
+                      
+                        <a *ngIf="item.status" class="btn btn-info btn-transparent btn-disable" title="禁用" data-id="{{ item.id }}">
+                                <span class="glyphicon glyphicon-ban-circle"></span>
+                        </a>
+
+                        <a class="btn btn-info btn-transparent btn-edit" title="编辑用户" href="#/userManage/userDetail?id={{ item.id }}&type=edit">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+
+                        <a class="btn btn-info btn-transparent btn-delete" title="删除用户" data-id="{{ item.id }}" data-placement="left" data-toggle="confirmation" data-original-title="确认删除?">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </td>
+                </tr>
+
+                <tr *ngIf="data.content && data.content>0">
+                    <td colspan="6">未搜索到符合该条件的记录！</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div id="pagination" class="pagination-wrap">
+            <ul id="pagination-content" class="page_box">
+
+            </ul>
+        </div>
+
+    </div>
+
+    <div id="reactJs"></div>
+</div>

@@ -1,0 +1,55 @@
+<div class="page page-addUser" id="addUser">
+    <div class="page-tit">
+        {{ model.ui.editType }}用户
+
+        <a class="btn btn-gray btn-save pull-right" href="javascript:;" v-on:click="save">
+            <i class="iconfont icon-save"></i>
+            {{ model.ui.editType }}
+        </a>
+        <a class="btn btn-gray btn-cancel pull-right" href="javascript:history.go(-1);">
+            <i class="iconfont icon-back"></i>
+            返回
+        </a>
+    </div>
+    <div class="page-cont">
+        <form action="" class="form-inline" id="form-addUser">
+            <div class="row row-box">
+                <div class="row-tit">{{ model.ui.editType }}</div>
+                <div class="row-cont">
+                    <div class="row">
+                        <div class="col-md-6">
+                            账&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：
+                            <input class="form-control" [(ngModel)]="model.data.account" required="required" data-vd-msg="请输入账号" type="text" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                        <div class="col-md-6">
+                            姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：
+                            <input class="form-control" [(ngModel)]="model.data.username" required="required" data-vd-msg="请输入姓名" type="text" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：
+                            <input class="form-control" [(ngModel)]="model.data.password" required="required" data-vd-msg="请输入密码" type="password" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                        <div class="col-md-6">
+                            确认密码：
+                            <input class="form-control" [(ngModel)]="model.data.rePassword" required="required" data-vd-msg="请再次输入密码" type="password" [ngModelOptions]="{standalone: true}"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            状态：
+                            <a href="javascript:;" title="点击禁用" *ngIf="model.data.status">
+                                启用
+                            </a>
+                            <a href="javascript:;" title="点击启用" *ngIf="!model.data.status">
+                                禁用
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
