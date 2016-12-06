@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 import { AppState } from '../app.service';
 import { Navs } from './navigation.service';
-import { XLarge } from './x-large';
+//import {NgFor} from '@angular/common'
+
 
 @Component({
   // The selector is what angular internally uses
@@ -13,6 +14,7 @@ import { XLarge } from './x-large';
   providers: [
       Navs
   ],
+  //directives: [NgFor],
   // Our list of styles in our component. We may add more to compose many styles together
   styleUrls: [ './navigation.component.css' ],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler

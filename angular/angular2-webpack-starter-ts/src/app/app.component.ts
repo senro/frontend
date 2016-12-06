@@ -5,11 +5,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 import { AppState } from './app.service';
 import { Navigation } from './navigation';
+
 /*
  * App Component
  * Top Level Component
  */
 @Component({
+  directives:[Navigation],
   selector: 'app',
   /*todo 为了解决样式隔离问题就，引入一个新概念ViewEncapsulation，多了需要学习的点，感觉完全没有必要
   * 本可以简单的通过样式写法解决*/
