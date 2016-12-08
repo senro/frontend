@@ -19,11 +19,9 @@ import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLarge } from './home/x-large';
 import { Navigation } from './navigation';
-<<<<<<< HEAD
-=======
 import { userManage } from './userManage';
 import { userDetail } from './userManage/userDetail';
->>>>>>> c76581790b87e7a4f2fa11bdd70862cb332fc7a6
+import {Ng2PaginationModule} from 'ng2-pagination'; // <-- import the module
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -43,21 +41,17 @@ type StoreType = {
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
-    AppComponent,
-    AboutComponent,
-    HomeComponent,
-    NoContentComponent,
-<<<<<<< HEAD
-    XLarge,
-    Navigation
-=======
-    Navigation,
-    userManage,
-    userDetail,
-    XLarge
->>>>>>> c76581790b87e7a4f2fa11bdd70862cb332fc7a6
+      AppComponent,
+      AboutComponent,
+      HomeComponent,
+      NoContentComponent,
+      Navigation,
+      userManage,
+      userDetail,
+      XLarge
   ],
   imports: [ // import Angular's modules
+    Ng2PaginationModule,
     BrowserModule,
     FormsModule,
     HttpModule,

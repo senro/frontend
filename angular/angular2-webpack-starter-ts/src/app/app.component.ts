@@ -2,13 +2,9 @@
  * Angular 2 decorators and services
  */
 import { Component, ViewEncapsulation } from '@angular/core';
-
 import { AppState } from './app.service';
-<<<<<<< HEAD
 import { Navigation } from './navigation';
 
-=======
->>>>>>> c76581790b87e7a4f2fa11bdd70862cb332fc7a6
 /*
  * App Component
  * Top Level Component

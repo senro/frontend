@@ -21,6 +21,13 @@ import { lists } from './userManage.service';
 
 export class userManage {
   // Set our default values
+  paginateConfig={
+        id: 'advanced',
+        itemsPerPage: 10,
+        currentPage: 1,
+        totalItems: 35
+  };
+
   data={
        "content": [
          {
@@ -55,8 +62,14 @@ export class userManage {
       this.data=lists.getData().data;
   }
 
+  public collection: any[] = this.data.content;  
+
   ngOnInit() {
     // this.title.getData().subscribe(data => this.data = data);
+  }
+
+  pageChanged(number){
+     this.paginateConfig.currentPage = number;
   }
 
  

@@ -253,7 +253,18 @@ section aside {
     height: 34px;
     line-height: 34px;
 }
+.ng2-pagination > li{
+    height: 30px;
+    line-height: 30px;
+}
+.ng2-pagination > li> a{
+    height: 30px;
+    line-height: 30px;
+}
 .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus{
+    background-color: #40d0fe;
+}
+.pagination > li.current{
     background-color: #40d0fe;
 }
 .info-currentPage{
@@ -302,6 +313,7 @@ footer{
     width: 100%;
     bottom: 0;
     z-index: 0;
+    text-align: center;
 }
 .footer {
     padding: 25px 0;
