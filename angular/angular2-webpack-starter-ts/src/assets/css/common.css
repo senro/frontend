@@ -264,8 +264,9 @@ section aside {
 .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus{
     background-color: #40d0fe;
 }
-.pagination > li.current{
+.pagination > li.current>span{
     background-color: #40d0fe;
+    color:#fff;
 }
 .info-currentPage{
     width: 33px;

@@ -23,7 +23,7 @@ export class userManage {
   // Set our default values
   paginateConfig={
         id: 'advanced',
-        itemsPerPage: 10,
+        itemsPerPage: 3,
         currentPage: 1,
         totalItems: 35
   };
@@ -45,13 +45,27 @@ export class userManage {
            "status": 0,
            "editTime": "2016-12-29  13:00"
          }
+         ,
+          {
+           "id": "3",
+           "account": "dongdong.yu@payegis.com",
+           "username": "高强强",
+           "status": 1,
+           "editTime": "2016-12-29  13:00"
+         }
+       ,
+         {
+           "id": "4",
+           "account": "dongdong.yu@payegis.com",
+           "username": "高强强",
+           "status": 0,
+           "editTime": "2016-12-29  13:00"
+         }
         ],
-       "size":"2",
-       "number":"0",
-       "sort":"null",
-       "numberOfElements":"2",
-       "totalElements":"2",
-       "totalPages":"1",
+        "size":"3",
+       "number":"1",
+       "totalElements":"4",
+       "totalPages":"2",
        "firstPage":"true",
        "lastPage":"true"
       };
@@ -60,9 +74,9 @@ export class userManage {
   constructor(public appState: AppState, public lists: lists) {
       console.log(lists.getData());
       this.data=lists.getData().data;
+      this.paginateConfig.currentPage=this.data.number;
+      this.paginateConfig.totalItems=this.data.totalElements;
   }
-
-  public collection: any[] = this.data.content;  
 
   ngOnInit() {
     // this.title.getData().subscribe(data => this.data = data);
@@ -70,6 +84,50 @@ export class userManage {
 
   pageChanged(number){
      this.paginateConfig.currentPage = number;
+     console.log('ajax send new page number:'+number);
+     setTimeout(function() {
+       this.data={
+       "content": [
+         {
+           "id": "1",
+           "account": "dongdong.yu@payegis.com",
+           "username": "高强强2",
+           "status": 1,
+           "editTime": "2016-12-29  13:00"
+         }
+       ,
+         {
+           "id": "2",
+           "account": "dongdong.yu@payegis.com",
+           "username": "高强强2",
+           "status": 0,
+           "editTime": "2016-12-29  13:00"
+         },
+          ,
+          {
+           "id": "3",
+           "account": "dongdong.yu@payegis.com",
+           "username": "高强强2",
+           "status": 1,
+           "editTime": "2016-12-29  13:00"
+         }
+       ,
+         {
+           "id": "4",
+           "account": "dongdong.yu@payegis.com",
+           "username": "高强强2",
+           "status": 0,
+           "editTime": "2016-12-29  13:00"
+         }
+        ],
+       "size":"3",
+       "number":number,
+       "totalElements":"4",
+       "totalPages":"2",
+       "firstPage":"true",
+       "lastPage":"true"
+      };
+     },2000);
   }
 
  

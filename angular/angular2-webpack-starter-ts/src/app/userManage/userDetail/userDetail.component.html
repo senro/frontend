@@ -2,7 +2,7 @@
     <div class="page-tit">
         {{ model.ui.editType }}用户
 
-        <a class="btn btn-gray btn-save pull-right" href="javascript:;" v-on:click="save">
+        <a class="btn btn-gray btn-save pull-right" href="javascript:;" (click)="save($event)">
             <i class="iconfont icon-save"></i>
             {{ model.ui.editType }}
         </a>
