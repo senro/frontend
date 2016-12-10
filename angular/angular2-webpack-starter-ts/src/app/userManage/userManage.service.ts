@@ -31,7 +31,7 @@ export class lists {
            "status": 0,
            "editTime": "2016-12-29  13:00"
          },
-          ,
+          
           {
            "id": "3",
            "account": "dongdong.yu@payegis.com",

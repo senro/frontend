@@ -74,8 +74,8 @@ export class userManage {
   constructor(public appState: AppState, public lists: lists) {
       console.log(lists.getData());
       this.data=lists.getData().data;
-      this.paginateConfig.currentPage=this.data.number;
-      this.paginateConfig.totalItems=this.data.totalElements;
+      this.paginateConfig.currentPage=Number(this.data.number);
+      this.paginateConfig.totalItems=Number(this.data.totalElements);
   }
 
   ngOnInit() {
@@ -86,6 +86,7 @@ export class userManage {
      this.paginateConfig.currentPage = number;
      console.log('ajax send new page number:'+number);
      setTimeout(function() {
+       console.log('ajax success!');
        this.data={
        "content": [
          {
@@ -103,7 +104,7 @@ export class userManage {
            "status": 0,
            "editTime": "2016-12-29  13:00"
          },
-          ,
+         
           {
            "id": "3",
            "account": "dongdong.yu@payegis.com",
